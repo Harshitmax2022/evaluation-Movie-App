@@ -5,15 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
+    <style>
+      #navbar{
+        display: flex;
+        justify-content: space-between;
+      }
+      input{
+        margin: auto;
+        display: block;
+
+      }
+      #movies{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      #movies>div{
+        border: 2px solid pink;
+      }
+      img{
+        width: 200px;
+        height: 200px;
+      }
+    </style>
   </head>
   <body>
     <div id="navbar">
       <h1>Movie List</h1>
       <!-- Display the wallet amount here inside h1 tag with id as "wallet". Note only amount, no extra text. Like 500 not Rs 500 -->
+      <h1 id="wallet"></h1>
     </div>
     <div id="search_bar">
       <!-- input box for searching movies with id as "search" -->
       <!-- No button should be there for searching movies, it should search with input  -->
+      <input oninput="debouncing(main,1500)" type="text" placeholder="search your movies here" id="search">
     </div>
 
     <div id="movies">
@@ -23,3 +50,4 @@
     </div>
   </body>
 </html>
+<script src="scripts\movies.js"></script>
